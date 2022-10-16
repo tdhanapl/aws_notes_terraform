@@ -26,4 +26,4 @@ resource "aws_vpc_peering_connection" "same_region" {
 }
 
 #Note:-
-After creating the vpc peering connection this need update in the private  route table routes(both). 
+#After creating the vpc peering connection this need update in the private  route table routes(both). 
