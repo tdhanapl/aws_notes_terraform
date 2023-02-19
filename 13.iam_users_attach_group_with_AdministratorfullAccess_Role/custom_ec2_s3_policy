@@ -1,0 +1,39 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "s3:*",
+                "s3-object-lambda:*"
+            ],
+            "Effect": "Allow",
+            "Resource": "*"
+        },
+        {
+            "Action": [
+                "ec2:Describe*"
+            ],
+            "Effect": "Allow",
+            "Resource": "*"
+        }
+    ]
+}
+############# terraform json 
+
+policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action = "ec2:*",
+        Effect   = "Allow"
+        Resource = "*"
+      },
+      {
+        Action = "s3:*",
+        Effect   = "Allow"
+        Resource = "*"
+      },
+
+    ]
+  })
+}
