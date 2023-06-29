@@ -1,0 +1,1 @@
+This application load balancer with fail over of ec2 instance and all are in public subnet.
