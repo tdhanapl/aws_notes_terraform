@@ -104,7 +104,7 @@ resource "aws_route" "main" {
 }
 # Route Table(s)
 # Route the public subnet traffic through the IGW
-resource "aws_route_table" "main" {
+resource "aws_route_table" "main_1" {
   vpc_id = aws_vpc.this.id
 
   route {
@@ -118,7 +118,7 @@ resource "aws_route_table" "main" {
 }
 
 # Route table and subnet associations
-resource "aws_route_table_association" "internet_access" {
+resource "aws_route_table_association" "internet_access_1" {
   count = var.availability_zones_count
 
   subnet_id      = aws_subnet.public[count.index].id
@@ -231,3 +231,4 @@ resource "aws_security_group_rule" "control_plane_outbound" {
   protocol          = "-1"
   cidr_blocks       = ["0.0.0.0/0"]
 }
+
